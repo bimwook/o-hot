@@ -1,27 +1,4 @@
 {
-  "_from": "o-hot",
-  "_id": "o-hot@0.0.1",
-  "_inBundle": false,
-  "_integrity": "sha1-yJee53dnWOCRTBM/f2Df61fzxZ4=",
-  "_location": "/o-hot",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "tag",
-    "registry": true,
-    "raw": "o-hot",
-    "name": "o-hot",
-    "escapedName": "o-hot",
-    "rawSpec": "",
-    "saveSpec": null,
-    "fetchSpec": "latest"
-  },
-  "_requiredBy": [
-    "#USER"
-  ],
-  "_resolved": "https://registry.npmjs.org/o-hot/-/o-hot-0.0.1.tgz",
-  "_shasum": "c8979ee7776758e0914c133f7f60dfeb57f3c59e",
-  "_spec": "o-hot",
-  "_where": "D:\\node-v8",
   "bugs": {
     "url": "https://github.com/bimwook/o-hot/issues"
   },
