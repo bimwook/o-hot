@@ -1,5 +1,5 @@
-const fs = require("fs");
 const hot = {};
+const fs = require("fs");
 
 hot.now = function(format){
   var d = new Date();
