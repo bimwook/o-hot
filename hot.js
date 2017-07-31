@@ -18,6 +18,14 @@ hot.now = function(format){
     .replace(/zzz/ig, ("000" + d.getMilliseconds()).slice(-3))  
 };
 
+hot.uuid = function(){
+  var rowid = [];
+  for (var i = 0; i < 40; i++) {
+    rowid.push(Math.floor(Math.random() * 10));
+  }
+  return rowid.join("");
+};
+
 hot.read = function(filename){
   return new Promise(function (resolve, reject) {
     fs.readFile(filename, function(error, data){
