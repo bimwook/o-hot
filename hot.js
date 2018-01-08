@@ -41,7 +41,11 @@ hot.write = function(filename, data){
     });
   });
 };
-
+hot.sleep = function(interval){
+  return new Promise(function (resolve, reject) {
+    setTimeout(function(){resolve(true);}, interval);
+  });
+};
 hot.encoder = {};
 hot.encoder.url = function(text){
   return global.encodeURIComponent(text);
