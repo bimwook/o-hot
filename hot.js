@@ -41,22 +41,27 @@ hot.write = function(filename, data){
     });
   });
 };
+
+hot.append = function(filename, data){
+  return new Promise(function (resolve, reject) {
+    fs.appendFile(filename, data, function(error){
+      resolve(!error);
+    });
+  });
+};
+
 hot.sleep = function(interval){
   return new Promise(function (resolve, reject) {
     setTimeout(function(){resolve(true);}, interval);
   });
 };
+
 hot.encoder = {};
 hot.encoder.url = function(text){
   return global.encodeURIComponent(text);
 };
 hot.encoder.html = function(text){
-  return (text||"")
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&#34;")
-    .replace(/'/g, "&#39;");
+  return (text||"").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&#34;").replace(/'/g, "&#39;");
 };
 
 hot.decoder = {};
@@ -64,4 +69,19 @@ hot.decoder.url = function(text){
   return global.decodeURIComponent(text);
 };
 
+hot.color = {};
+hot.color.blue = function(s){
+ return `\x1B[96m${s}\x1B[39m`;
+};
+hot.color.green = function(s){
+ return `\x1B[92m${s}\x1B[39m`;
+};
+hot.color.red = function(s){
+ return `\x1B[91m${s}\x1B[39m`;
+};
+hot.color.yellow = function(s){
+ return `\x1B[93m${s}\x1B[39m`;
+};
+
 module.exports = hot;
+
